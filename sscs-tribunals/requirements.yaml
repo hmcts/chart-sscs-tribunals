@@ -1,4 +1,7 @@
 dependencies:
+  - name: sscs-tribunals-frontend
+    version: ~0.1.0
+    repository: '@hmcts'
   - name: sscs-tya-frontend
     version: ~0.1.0
     repository: '@hmcts'
