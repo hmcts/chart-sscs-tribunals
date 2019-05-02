@@ -6,6 +6,7 @@ global:
 ### SSCS SERVICES ###
 sscs-tribunals-frontend:
   nodejs:
+    releaseNameOverride: chart-sscs-tribunals-sya
     image: hmcts.azurecr.io/hmcts/sscs-tribunals-frontend:latest
     readinessDelay: 180 # let backends all start
     livenessDelay: 180 # let backends all start
@@ -16,7 +17,7 @@ sscs-tribunals-frontend:
 
 sscs-tribunals-api:
   java:
-    releaseNameOverride: sscs-tya-frontend
+    releaseNameOverride: chart-sscs-tribunals-api
     image: hmcts.azurecr.io/hmcts/sscs-tya-frontend:latest
     readinessDelay: 120 # plenty time for dependencies all start
     livenessDelay: 120 # plenty time for dependencies all start
@@ -25,7 +26,7 @@ sscs-tribunals-api:
 
 sscs-tya-frontend:
   nodejs:
-    releaseNameOverride: sscs-tya-frontend
+    releaseNameOverride: chart-sscs-tribunals-tya
     image: hmcts.azurecr.io/hmcts/sscs-tya-frontend:latest
     readinessDelay: 180 # let backends all start
     livenessDelay: 180 # let backends all start
