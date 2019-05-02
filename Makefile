@@ -4,10 +4,10 @@ CI_VALUES := ci-values.yaml
 RELEASE := chart-${CHART}-release
 NAMESPACE := chart-tests-sscs
 TEST := ${RELEASE}-test-service
-ACR := hmctssandbox
-AKS_RESOURCE_GROUP :=  cnp-aks-sandbox-rg
-AKS_CLUSTER := cnp-aks-sandbox-cluster
-SUBSCRIPTION := bf308a5c-0624-4334-8ff8-8dca9fd43783
+ACR := hmcts
+AKS_RESOURCE_GROUP :=  cnp-aks-rg
+AKS_CLUSTER := cnp-aks-cluster
+SUBSCRIPTION := 1c4f0704-a29e-403d-b719-b90c34ef14c9
 
 setup:
 	az configure --defaults acr=${ACR}

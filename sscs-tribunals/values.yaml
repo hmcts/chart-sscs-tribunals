@@ -12,6 +12,7 @@ sscs-tribunals-frontend:
     registerAdditionalDns:
       enabled: false
     environment:
+      CHART: true
 
 sscs-tribunals-api:
   java:
@@ -20,6 +21,7 @@ sscs-tribunals-api:
     readinessDelay: 120 # plenty time for dependencies all start
     livenessDelay: 120 # plenty time for dependencies all start
     environment:
+      CHART: true
 
 sscs-tya-frontend:
   nodejs:
@@ -30,6 +32,7 @@ sscs-tya-frontend:
     registerAdditionalDns:
       enabled: false
     environment:
+      CHART: true
 ########################
 
 ##### DEPENDENCIES #####
