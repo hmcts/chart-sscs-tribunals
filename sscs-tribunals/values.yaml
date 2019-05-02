@@ -1,6 +1,6 @@
 global:
-  environment: saat
-  subscriptionId: "bf308a5c-0624-4334-8ff8-8dca9fd43783"
+  environment: aat
+  subscriptionId: "1c4f0704-a29e-403d-b719-b90c34ef14c9"
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
 
 ### SSCS SERVICES ###
@@ -32,7 +32,7 @@ sscs-tya-frontend:
     registerAdditionalDns:
       enabled: false
     environment:
-      CHART: true
+      - CHART: true
 ########################
 
 ##### DEPENDENCIES #####
@@ -43,5 +43,5 @@ cmc-pdf-service:
 
 rpe-service-auth-provider:
   java:
-    releaseNameOverride: rpe-service-auth-provider
+    releaseNameOverride: chart-sscs-rpe-service-auth-provider
     image: hmcts.azurecr.io/hmcts/rpe-service-auth-provider:latest
