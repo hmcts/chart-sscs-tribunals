@@ -26,7 +26,7 @@ sscs-tribunals-frontend:
 sscs-tribunals-api:
   java:
     releaseNameOverride: chart-sscs-tribunals-api
-    image: hmcts.azurecr.io/hmcts/sscs-tya-frontend:latest
+    image: hmcts.azurecr.io/hmcts/sscs-tribunals-api:latest
     readinessDelay: 120 # plenty time for dependencies all start
     livenessDelay: 120 # plenty time for dependencies all start
     environment:
