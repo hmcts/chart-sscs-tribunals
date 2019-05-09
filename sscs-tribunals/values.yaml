@@ -13,7 +13,15 @@ sscs-tribunals-frontend:
     registerAdditionalDns:
       enabled: false
     environment:
-      CHART: true
+      REDIS_URL: redis://chart-sscs-tribunals-release-redis-master
+      TRIBUNALS_CASE_API_URL: "http://chart-sscs-tribunals-api"
+      UPLOAD_EVIDENCE_URL: "http://chart-sscs-tribunals-api/evidence/upload"
+      POSTCODE_CHECKER_URL: "http://chart-sscs-tribunals-api/regionalcentre"
+      POSTCODE_CHECKER_ENABLED: "true"
+      POSTCODE_CHECKER_ALLOWED_RPCS: "birmingham,liverpool,sutton,leeds,newcastle,cardiff"
+      SERVICES_IDAM_API_URL: "https://idam-api.aat.platform.hmcts.net"
+      SERVICES_IDAM_LOGIN_URL: "https://idam-web-public.aat.platform.hmcts.net/login"
+      ALLOW_SAVE_RETURN: "false"
 
 sscs-tribunals-api:
   java:
@@ -32,14 +40,13 @@ sscs-tya-frontend:
     livenessDelay: 180 # let backends all start
     registerAdditionalDns:
       enabled: false
-    environment:
-      - CHART: true
+
 ########################
 
 ##### DEPENDENCIES #####
 cmc-pdf-service:
   java:
-    releaseNameOverride: cmc-pdf-service
+    releaseNameOverride: chart-sscs-cmc-pdf-service
     image: hmcts.azurecr.io/hmcts/cmc-pdf-service:latest
 
 rpe-service-auth-provider:

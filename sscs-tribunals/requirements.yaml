@@ -6,11 +6,11 @@ dependencies:
     version: ~0.1.0
     repository: '@hmcts'
   - name: sscs-tribunals-api
-    version: ~0.0.2
+    version: ~0.0.3
     repository: '@hmcts'
   - name: rpe-service-auth-provider
-    version: ~0.0.2
+    version: ~0.0.4
     repository: '@hmcts'
   - name: cmc-pdf-service
-    version: ~0.1.0
+    version: ~0.1.1
     repository: '@hmcts'

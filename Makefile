@@ -2,7 +2,7 @@
 CHART := sscs-tribunals
 CI_VALUES := ci-values.yaml
 RELEASE := chart-${CHART}-release
-NAMESPACE := chart-tests-sscs
+NAMESPACE := chart-tests
 TEST := ${RELEASE}-test-service
 ACR := hmcts
 AKS_RESOURCE_GROUP :=  cnp-aks-rg
