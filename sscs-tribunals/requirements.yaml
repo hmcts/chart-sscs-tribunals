@@ -3,7 +3,7 @@ dependencies:
     version: ~0.1.0
     repository: '@hmcts'
   - name: sscs-tya-frontend
-    version: ~0.1.0
+    version: ~0.1.1
     repository: '@hmcts'
   - name: sscs-tribunals-api
     version: ~0.0.3
@@ -12,5 +12,5 @@ dependencies:
     version: ~0.0.4
     repository: '@hmcts'
   - name: cmc-pdf-service
-    version: ~0.1.1
+    version: ~0.1.2
     repository: '@hmcts'

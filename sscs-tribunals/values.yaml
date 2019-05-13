@@ -6,7 +6,7 @@ global:
 ### SSCS SERVICES ###
 sscs-tribunals-frontend:
   nodejs:
-    releaseNameOverride: chart-sscs-tribunals-sya
+    releaseNameOverride: chart-sscs-tribunals-release-sya
     image: hmcts.azurecr.io/hmcts/sscs-tribunals-frontend:latest
     readinessDelay: 180 # let backends all start
     livenessDelay: 180 # let backends all start
@@ -14,32 +14,37 @@ sscs-tribunals-frontend:
       enabled: false
     environment:
       REDIS_URL: redis://chart-sscs-tribunals-release-redis-master
-      TRIBUNALS_CASE_API_URL: "http://chart-sscs-tribunals-api"
-      UPLOAD_EVIDENCE_URL: "http://chart-sscs-tribunals-api/evidence/upload"
-      POSTCODE_CHECKER_URL: "http://chart-sscs-tribunals-api/regionalcentre"
-      POSTCODE_CHECKER_ENABLED: "true"
+      TRIBUNALS_CASE_API_URL: http://chart-sscs-tribunals-release-api
+      UPLOAD_EVIDENCE_URL: http://chart-sscs-tribunals-release-api/evidence/upload
+      POSTCODE_CHECKER_URL: http://chart-sscs-tribunals-release-api/regionalcentre
+      POSTCODE_CHECKER_ENABLED: true
       POSTCODE_CHECKER_ALLOWED_RPCS: "birmingham,liverpool,sutton,leeds,newcastle,cardiff"
-      SERVICES_IDAM_API_URL: "https://idam-api.aat.platform.hmcts.net"
-      SERVICES_IDAM_LOGIN_URL: "https://idam-web-public.aat.platform.hmcts.net/login"
-      ALLOW_SAVE_RETURN: "false"
+      SERVICES_IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
+      SERVICES_IDAM_LOGIN_URL: https://idam-web-public.aat.platform.hmcts.net/login
+      ALLOW_SAVE_RETURN: false
 
 sscs-tribunals-api:
   java:
-    releaseNameOverride: chart-sscs-tribunals-api
+    releaseNameOverride: chart-sscs-tribunals-release-api
     image: hmcts.azurecr.io/hmcts/sscs-tribunals-api:latest
     readinessDelay: 120 # plenty time for dependencies all start
     livenessDelay: 120 # plenty time for dependencies all start
     environment:
-      CHART: true
+      IDAM_S2S_AUTH: http://chart-sscs-rpe-service-auth-provider
+      IDAM_API_BASE_URI: http://idam-api-idam-saat.service.core-compute-idam-saat.internal
+      PDF_API_URL: http://chart-sscs-cmc-pdf-service
+      IDAM_OAUTH2_REDIRECT_URL: https://evidence-sharing-preprod.sscs.reform.hmcts.net
 
 sscs-tya-frontend:
   nodejs:
-    releaseNameOverride: chart-sscs-tribunals-tya
+    releaseNameOverride: chart-sscs-tribunals-release-tya
     image: hmcts.azurecr.io/hmcts/sscs-tya-frontend:latest
     readinessDelay: 180 # let backends all start
     livenessDelay: 180 # let backends all start
     registerAdditionalDns:
       enabled: false
+    environment:
+      SSCS_API_URL: http://chart-sscs-tribunals-release-api
 
 ########################
 
