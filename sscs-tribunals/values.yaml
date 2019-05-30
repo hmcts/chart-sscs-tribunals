@@ -1,8 +1,3 @@
-global:
-  environment: aat
-  subscriptionId: "1c4f0704-a29e-403d-b719-b90c34ef14c9"
-  tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-
 ### SSCS SERVICES ###
 sscs-tribunals-frontend:
   nodejs:
@@ -34,7 +29,8 @@ sscs-tribunals-api:
       IDAM_API_BASE_URI: http://idam-api-idam-saat.service.core-compute-idam-saat.internal
       PDF_API_URL: http://chart-sscs-cmc-pdf-service
       IDAM_OAUTH2_REDIRECT_URL: https://evidence-sharing-preprod.sscs.reform.hmcts.net
-
+      IDAM_S2S_AUTH_TOTP_SECRET: "AAAAAAAAAAAAAAAC"
+    keyVaults: 
 sscs-tya-frontend:
   nodejs:
     releaseNameOverride: chart-sscs-tribunals-release-tya
@@ -58,3 +54,6 @@ rpe-service-auth-provider:
   java:
     releaseNameOverride: chart-sscs-rpe-service-auth-provider
     image: hmcts.azurecr.io/hmcts/rpe-service-auth-provider:latest
+    keyVaults:
+    environment:
+      MICROSERVICEKEYS_SSCS: "AAAAAAAAAAAAAAAC"
